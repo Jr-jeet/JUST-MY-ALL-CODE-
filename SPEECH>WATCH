@@ -7,3 +7,4 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 # ---------------- LISTEN FUNCTION ----------------
+r = sr.Recognizer()
