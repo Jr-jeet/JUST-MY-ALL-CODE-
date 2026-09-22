@@ -8,4 +8,4 @@ def speak(text):
     engine.runAndWait()
 # ---------------- LISTEN FUNCTION ----------------
 r = sr.Recognizer()
-def
+def listen():
