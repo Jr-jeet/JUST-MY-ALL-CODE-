@@ -10,4 +10,4 @@ def speak(text):
 
 r = sr.Recognizer()
 def listen():
-    with sr.Microphone()
+    with sr.Microphone()   as source:
