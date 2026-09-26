@@ -43,5 +43,4 @@ void loop() {
 
     Serial.println(answer);
   }
-
 }
