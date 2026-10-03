@@ -12,3 +12,24 @@ r = sr.Recognizer()
 def listen():
     with sr.Microphone()   as source:
  print("Listening...")
+
+  r.adjust_for_ambient_noise(source, duration=1)
+
+        audio = r.listen(
+            source,
+            timeout=5,          # 5 second tak speech start hone ka wait
+            phrase_time_limit=5 # Maximum 5 second ki recording
+        )
+
+    try:
+        text = r.recognize_google(audio, language="en-IN")
+        print("You said:", text)
+        return text.lower()
+
+    except sr.UnknownValueError:
+        print("Could not understand.")
+        return ""
+
+    except sr.RequestError:
+        print("Internet problem.")
+        return ""
