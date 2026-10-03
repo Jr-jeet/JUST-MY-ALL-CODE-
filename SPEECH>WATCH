@@ -33,3 +33,50 @@ def listen():
     except sr.RequestError:
         print("Internet problem.")
         return ""
+
+# ---------------- DICTIONARY ----------------
+knowledge = {
+
+    "direct tax":
+    "incidence and burden falls on the same person  more tax evasion wealth tax",
+
+    "tax":
+    " a tax is ent made andilldical compaleory payment. by individu business to the government. The government wed provide public services this money to provide defence radd, hospital, and other welfare program Tax is OL compalsory levy imposed the government under the سمد authorityut for public purpose of direct consideration.",
+
+    "direct tax":
+    "A direct tax is a tax imposed directly on the income, wealth, or property of an individual or organization, where the burden of the tax is borne by the same person who pays it.",
+
+    "indirect tax":
+    "An indirect tax is a tax imposed on goods and services, where the responsibility for collecting and paying the tax to the government lies with the seller, but the actual burden is passed on to the consumer.",
+
+  
+    "income tax act 1961":
+    "Applies to the whole of India. Covers individuals, Hindu Undivided Families (HUFs), firms, companies, and other entities.  Classifies income under different heads  Provides deductions, exemptions, rebates, and reliefs      .Specifies tax rates, assessment procedures, penalties, and appeals.",
+    
+    
+}
+
+# ---------------- THINK FUNCTION ----------------
+def think(question):
+
+    question = question.replace("what is", "")
+    question = question.replace("tell me about", "")
+    question = question.strip()
+
+    if question in knowledge:
+        return knowledge[question]
+
+    return "Sorry, I do not know about that topic yet."
+
+
+# ---------------- MAIN PROGRAM ----------------
+question = listen()
+
+if question != "":
+    answer = think(question)
+
+    print("\nAnswer:")
+    print(answer)
+
+    speak(answer)
+
